@@ -53,11 +53,6 @@ class Annotator:
 
   def update(self):
     """Draws any changes to the image buffer onto the overlay."""
-    # For some reason, simply updating the current overlay causes
-    # PiCameraMMALError every time we update. To avoid that, we create a new
-    # overlay each time we want to update.
-    # We use a temp overlay object because if we remove the current overlay
-    # first, it causes flickering (the overlay visibly disappears for a moment).
     temp_overlay = self._camera.add_overlay(
         self._buffer.tobytes(), format='rgba', layer=3, size=self._buffer_dims)
     if self._overlay is not None:
