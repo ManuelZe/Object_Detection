@@ -34,6 +34,14 @@ D'après la documentation de PiCamera.add_overlay, la source de données
 de 32 et la hauteur à un multiple de 16.
 	dims : dimensions de l'image
 	retourne les dimensions arrondies dans un tuple.
+    
+"def update(self)"
+Pour des raisons inconnues de nous, à chaque simple mise à jour de la superposition
+actuelle, le model soulève un PiCameraMMALError à chaque fois. Pour corriger celà alors 
+nous créerons une nouvelle superposition lorsque nous voudrons faire une mise à jour.
+Nous utiliserons un objet de superposition temporaire car si nous enlevons la 
+superposition actuelle en premier, cela causerait un temps de repos
+la superposition visible disparaitra pour un moment.
 
 
 "def bounding_box(self, rect, outiline=None, fill=None):"
