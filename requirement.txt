@@ -1,0 +1,3 @@
+Les outils nécessaires pour l'implémentation de cette solution sont
+    - UNe Raspberry
+    - Une Pi Caméra. (La plupart des pi Camera viennent avec les Raspberry surtout celles nouvelles)  
